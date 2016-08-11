@@ -23,7 +23,7 @@ public class TileMap {
     // Smoothly scroll the camera to the player
     private double tween;
 
-    // map
+    // Map
     private int[][] map;
     private int tileSize;
     private int numRows;
@@ -93,7 +93,7 @@ public class TileMap {
 
     }
 
-    /** Loads the map file into memory */
+    /** Loads the Map file into memory */
     public void loadMap(String s) {
 
         try {

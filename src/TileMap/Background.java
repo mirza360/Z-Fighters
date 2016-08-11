@@ -15,7 +15,7 @@ public class Background {
     private double dx;
     private double dy;
 
-    private double moveScale; // Scale at which the background moves for
+    private double moveScale; // Scale at which the Background moves for
     // the parallax effect
 
     /* To import resources */

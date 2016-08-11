@@ -72,7 +72,7 @@ public abstract class MapObject {
         tileSize = tm.getTileSize();
     }
 
-    /** Check if it can collide with other map objects */
+    /** Check if it can collide with other Map objects */
     public boolean intersects(MapObject o) {
         Rectangle r1 = getRectangle();
         Rectangle r2 = o.getRectangle();
@@ -217,10 +217,10 @@ public abstract class MapObject {
         this.dy = dy;
     }
 
-    /* Every map object has two positions:
+    /* Every Map object has two positions:
     One is there local position x and y,
     and the other is there local position which is
-    x and y plus their tile map position
+    x and y plus their tile Map position
      */
 
     /*

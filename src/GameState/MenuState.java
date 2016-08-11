@@ -28,8 +28,8 @@ public class MenuState extends GameState{
         this.gsm = gsm;
 
         try {
-            bg = new Background("/background/menu_bg2.png", 1);
-            bg.setVector(0, 0); // Current menu background will not move
+            bg = new Background("/Background/menu_bg2.png", 1);
+            bg.setVector(0, 0); // Current menu Background will not move
 
             titleColor = new Color(255, 140, 0);
             titleFont = new Font(
@@ -54,7 +54,7 @@ public class MenuState extends GameState{
 
     public void draw(Graphics2D g) {
 
-        // draw background
+        // draw Background
         bg.draw(g);
 
         // draw title
