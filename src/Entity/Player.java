@@ -9,6 +9,6 @@ import java.util.ArrayList;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
-public class Player extends MapObject{
+public class Player {
 
 }
