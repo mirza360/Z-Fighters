@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9f4fc070-a98e-4c64-ba96-3e893d216695" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Player.java" afterPath="$PROJECT_DIR$/src/Entity/Player.java" />
     </list>
     <ignored path="Z Fighters.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -800,6 +799,7 @@
       <option name="presentableId" value="Default" />
       <updated>1470775150137</updated>
       <workItem from="1470775154885" duration="8506000" />
+      <workItem from="1470912942333" duration="3011000" />
     </task>
     <task id="LOCAL-00001" summary="Added SFX files">
       <created>1470915498476</created>
@@ -812,6 +812,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="11517000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
