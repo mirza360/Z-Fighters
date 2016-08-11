@@ -153,9 +153,9 @@ public class Player extends MapObject{
         animation.setFrames(sprites.get(IDLE));
         animation.setDelay(400);
 
-        sfx = new HashMap<String, AudioPlayer>();
-        sfx.put("jump", new AudioPlayer("/SFX/jump.ogg"));
-        sfx.put("punch", new AudioPlayer("/SFX/punches.ogg"));
+        //sfx = new HashMap<String, AudioPlayer>();
+        //sfx.put("jump", new AudioPlayer("/SFX/jump.mp3"));
+        //sfx.put("punch", new AudioPlayer("/SFX/punches.mp3"));
     }
 
     public int getHealth() {
@@ -281,7 +281,7 @@ public class Player extends MapObject{
 
         // jumping
         if (jumping && !falling) {
-            sfx.get("jump").play();
+            //sfx.get("jump").play();
             dy = jumpStart;
             falling = true;
         }
@@ -348,7 +348,7 @@ public class Player extends MapObject{
         // set animation
         if(punching) {
             if(currentAction != PUNCHING) {
-                sfx.get("punch").play();
+                //sfx.get("punch").play();
                 currentAction = PUNCHING;
                 animation.setFrames(sprites.get(PUNCHING));
                 animation.setDelay(50);

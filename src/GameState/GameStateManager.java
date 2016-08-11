@@ -21,8 +21,8 @@ public class GameStateManager {
     private void loadState(int state) {
         if(state == MENU_STATE)
             gameStates[state] = new MenuState(this);
-        // else if(state == FIGHT_STATE)
-            // gameStates[state] = new FightState(this);
+        else if(state == FIGHT_STATE)
+            gameStates[state] = new FightState(this);
         // else if(state == CONTROLS_STATE)
             // gameStates[state] = new ControlsState(this);
     }
