@@ -1,7 +1,5 @@
 package Entity;
 
-import Entity.Player;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
@@ -39,8 +37,8 @@ public class HUD {
                 25
         );
         g.drawString(
-                player.getFire() / 100 + "/" +
-                        player.getMaxFire() / 100,
+                player.getEnergy() / 100 + "/" +
+                        player.getMaxEnergy() / 100,
                 30,
                 45
         );
