@@ -128,7 +128,7 @@ public class Player extends MapObject{
                         specificPath = commonPath + "punch/";
                         break;
                     case FLOATING:
-                        specificPath = commonPath + "fall/";
+                        specificPath = commonPath + "fall/"; // looks better
                         break;
                 }
 
@@ -449,11 +449,12 @@ public class Player extends MapObject{
 
         // set direction
         // the player should not move while attacking
-        if(currentAction != PUNCHING && currentAction != ATTACKING_DESTRUCTO_DISK)
-            if(right)
+        if(currentAction != PUNCHING && currentAction != ATTACKING_DESTRUCTO_DISK) {
+            if (right)
                 facingRight = true;
-        if(left)
-            facingRight = false;
+            else if (left)
+                facingRight = false;
+        }
     }
 
     public void draw(Graphics2D g) {

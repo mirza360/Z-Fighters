@@ -283,8 +283,8 @@ public abstract class MapObject {
                     animation.getImage(),
                     (int)(x + xMap - width / 2 + width),
                     (int)(y + yMap - height / 2),
-                    -width, // flip
-                    height,
+                    -animation.getImage().getWidth(), // flip
+                    animation.getImage().getHeight(),
                     null
             );
         }
