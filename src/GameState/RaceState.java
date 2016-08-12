@@ -40,7 +40,7 @@ public class RaceState extends GameState{
 
         bg = new Background("/Background/namek.png", 0.1);
 
-        player = new Player(tileMap, "base");
+        player = new Player(tileMap, "ss");
         player.setPosition(100, 100);
 
         populateEnemies();

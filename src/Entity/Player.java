@@ -59,15 +59,15 @@ public class Player extends MapObject{
 
         super(tm);
 
-        /* Not needed, delete later if everything's ok
+        // Needed
         // For reading in the sprite sheet
         width = 30;
         height = 30;
-        */
+
 
         // Real (collision) width and height
         cWidth = 30;
-        cHeight = 40;
+        cHeight = 45;
 
         // Physics variables (values must be kept the same)
         moveSpeed = 0.3;
@@ -88,7 +88,7 @@ public class Player extends MapObject{
         destructoDisks = new ArrayList<DestructoDisk>();
 
         punchDamage = 50;
-        punchRange = 30; // 30px
+        punchRange = 15; // 15px
 
         // load sprites
         try {
@@ -128,7 +128,7 @@ public class Player extends MapObject{
                         specificPath = commonPath + "punch/";
                         break;
                     case FLOATING:
-                        specificPath = commonPath + "float/";
+                        specificPath = commonPath + "fall/";
                         break;
                 }
 
@@ -154,7 +154,7 @@ public class Player extends MapObject{
         sfx = new HashMap<String, AudioPlayer>();
         sfx.put("jump", new AudioPlayer("/SFX/jump.mp3"));
         sfx.put("punch", new AudioPlayer("/SFX/punches.mp3"));
-        sfx.put("destructo", new AudioPlayer("/SFX/disk_fire.mp3"));
+        sfx.put("destructo", new AudioPlayer("/SFX/disk_ready.mp3"));
         sfx.put("charge", new AudioPlayer("/SFX/powerup.mp3"));
     }
 
@@ -376,7 +376,7 @@ public class Player extends MapObject{
                 sfx.get("punch").play();
                 currentAction = PUNCHING;
                 animation.setFrames(sprites.get(PUNCHING));
-                animation.setDelay(50);
+                animation.setDelay(150);
                 width = 60;
             }
         }
