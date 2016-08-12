@@ -88,7 +88,7 @@ public class Player extends MapObject{
         destructoDisks = new ArrayList<DestructoDisk>();
 
         punchDamage = 50;
-        punchRange = 15; // 15px
+        punchRange = 20; // 20px
 
         // load sprites
         try {
@@ -154,7 +154,7 @@ public class Player extends MapObject{
         sfx = new HashMap<String, AudioPlayer>();
         sfx.put("jump", new AudioPlayer("/SFX/jump.mp3"));
         sfx.put("punch", new AudioPlayer("/SFX/punches.mp3"));
-        sfx.put("destructo", new AudioPlayer("/SFX/candyattack.mp3"));
+        sfx.put("destructo", new AudioPlayer("/SFX/spin.mp3"));
         sfx.put("charge", new AudioPlayer("/SFX/powerup.mp3"));
     }
 
