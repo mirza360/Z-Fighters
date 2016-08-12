@@ -107,6 +107,12 @@ public class RaceState extends GameState{
                 i--;
             }
         }
+
+
+        if (player.isDead()) {
+            //gsm.setState(GameStateManager.MENU_STATE);
+        }
+
     }
 
     public void draw(Graphics2D g) {
@@ -187,5 +193,16 @@ public class RaceState extends GameState{
 
         if (k == KeyEvent.VK_Q)
             player.setCharging(false);
+    }
+
+    public void delay(long time) {
+        long current = System.currentTimeMillis();
+        long timer = System.currentTimeMillis();
+        long delay = timer - current;
+
+        while(delay < time) { // loop will run for the specified milliseconds
+            timer = System.currentTimeMillis();
+            delay = timer - current;
+        }
     }
 }

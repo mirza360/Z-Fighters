@@ -38,10 +38,13 @@ public class Player extends MapObject{
     // Floating
     private boolean floating;
 
+    // Dying
+    private boolean dying;
+
     // Animations
     private ArrayList<BufferedImage[]> sprites;
     private final int[] numFrames = {
-            1, 6, 1, 1, 1, 3, 7, 3
+            1, 6, 1, 1, 1, 3, 7, 3, 1
     }; // number of frames animation actions have
 
     // Animation actions
@@ -53,6 +56,7 @@ public class Player extends MapObject{
     private static final int ATTACKING_DESTRUCTO_DISK = 5;
     private static final int PUNCHING = 6;
     private static final int CHARGING = 7;
+    private static final int DYING = 8;
 
     private HashMap<String, AudioPlayer> sfx;
 
@@ -81,7 +85,7 @@ public class Player extends MapObject{
 
         facingRight = true;
 
-        health = maxHealth = 5;
+        health = maxHealth = 1;
         energy = maxEnergy = 1000;
 
         destructoDiskCost = 300;
@@ -131,6 +135,9 @@ public class Player extends MapObject{
                     case FLOATING:
                         specificPath = commonPath + "fall/"; // looks better
                         break;
+                    case DYING:
+                        specificPath = commonPath + "dead/";
+                        break;
                 }
 
                 for(int j = 0; j < numFrames[i]; j++) {
@@ -173,6 +180,10 @@ public class Player extends MapObject{
 
     public int getMaxEnergy() {
         return maxEnergy;
+    }
+
+    public boolean isDead() {
+        return dead;
     }
 
     // Once we attack, the attack has to be all the way through
@@ -252,7 +263,7 @@ public class Player extends MapObject{
         if(health < 0)
             health = 0;
         if(health == 0)
-            dead = true;
+            dying = true;
         flinching = true;
         flinchTimer = System.nanoTime();
     }
@@ -291,8 +302,8 @@ public class Player extends MapObject{
             }
         }
 
-        // cannot move while attacking unless in the air
-        if((currentAction == PUNCHING || currentAction == ATTACKING_DESTRUCTO_DISK || currentAction == CHARGING)
+        // cannot move while attacking, charging or dying unless in the air
+        if((currentAction == PUNCHING || currentAction == ATTACKING_DESTRUCTO_DISK || currentAction == CHARGING || currentAction == DYING)
                 && !(jumping || falling)) {
             dx = 0; // cannot move
         }
@@ -342,13 +353,6 @@ public class Player extends MapObject{
                 firingDestructoDisk = false;
         }
 
-
-        /* Need to work on manual charging
-        energy += 1; // Continuously regenerate the energy energy
-        if(energy > maxEnergy)
-            energy = maxEnergy;
-        */
-
         // Charging
         if(charging) {
             energy += 1;
@@ -395,6 +399,16 @@ public class Player extends MapObject{
                 animation.setDelay(150);
                 width = 30;
                 height = 30;
+            }
+        }
+        else if(dying) {
+            if(currentAction != DYING) {
+                currentAction = DYING;
+                animation.setFrames(sprites.get(DYING));
+                animation.setDelay(500);
+                width = 30;
+                height = -10;
+                dead = true;
             }
         }
         else if(firingDestructoDisk && previousEnergy > destructoDiskCost) {
@@ -510,5 +524,16 @@ public class Player extends MapObject{
         }
 
         super.draw(g);
+    }
+
+    public void delay(long time) {
+        long current = System.currentTimeMillis();
+        long timer = System.currentTimeMillis();
+        long delay = timer - current;
+
+        while(delay < time) { // loop will run for the specified milliseconds
+            timer = System.currentTimeMillis();
+            delay = timer - current;
+        }
     }
 }
