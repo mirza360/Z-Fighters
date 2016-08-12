@@ -56,7 +56,7 @@ public class RaceState extends GameState{
     private void populateEnemies() {
         enemies = new ArrayList<Enemy>();
 
-        Slugger s;
+        Beast s;
         Point[] points = new Point[] {
                 new Point(200, 100),
                 new Point(860, 200),
@@ -66,7 +66,7 @@ public class RaceState extends GameState{
         };
 
         for(int i = 0; i < points.length; i++) {
-            s = new Slugger(tileMap);
+            s = new Beast(tileMap);
             s.setPosition(points[i].x, points[i].y);
             enemies.add(s);
         }
