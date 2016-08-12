@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd7176f9-5e76-40cc-aacc-45d1368b946d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Entity/Enemies/Slugger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GameState/RaceState.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Resources/Map/first_map.map" afterPath="$PROJECT_DIR$/Resources/Maps/first_map.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Resources/Map/level1-1.map" afterPath="$PROJECT_DIR$/Resources/Maps/level1-1.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Libs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameState/GameStateManager.java" afterPath="$PROJECT_DIR$/src/GameState/GameStateManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Z-Racers.iml" afterPath="$PROJECT_DIR$/Z-Racers.iml" />
     </list>
     <ignored path="Z-Racers.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,8 +124,8 @@
       <file leaf-file-name="GameStateManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameState/GameStateManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+            <state relative-caret-position="306">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -872,12 +868,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1470950949940</updated>
-      <workItem from="1470950956607" duration="10003000" />
+      <workItem from="1470950956607" duration="10463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10003000" />
+    <option name="totallyTimeSpent" value="10463000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="793" y="0" width="814" height="867" extended-state="0" />
@@ -1110,8 +1106,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameState/GameStateManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+        <state relative-caret-position="306">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
