@@ -110,7 +110,7 @@ public class RaceState extends GameState{
 
 
         if (player.isDead()) {
-            //gsm.setState(GameStateManager.MENU_STATE);
+            gsm.setState(GameStateManager.MENU_STATE);
         }
 
     }

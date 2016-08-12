@@ -85,7 +85,7 @@ public class Player extends MapObject{
 
         facingRight = true;
 
-        health = maxHealth = 1;
+        health = maxHealth = 5;
         energy = maxEnergy = 1000;
 
         destructoDiskCost = 300;
@@ -388,6 +388,10 @@ public class Player extends MapObject{
             if(elapsed > 1000) {
                 flinching = false;
             }
+        }
+
+        if(notOnScreen()) {
+            dead = true;
         }
 
         // set animation
