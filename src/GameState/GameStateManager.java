@@ -14,7 +14,7 @@ public class GameStateManager {
 
         gameStates = new GameState[NUMBER_OF_GAME_STATES];
 
-        currentState = MENU_STATE;
+        currentState = RACE_STATE;
         loadState(currentState);
     }
 
