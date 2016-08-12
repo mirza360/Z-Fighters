@@ -15,17 +15,17 @@ public class Slugger extends Enemy{
 
         super(tm);
 
-        moveSpeed = 0.3;
-        maxSpeed = 0.3;
+        moveSpeed = 0.45;
+        maxSpeed = 0.45;
         fallSpeed = 0.2;
         maxFallSpeed = 10.0;
 
-        width = 30; // For the tile sheet
-        height = 30; // For the tile sheet
+        width = 40; // For the tile sheet
+        height = 32; // For the tile sheet
         cWidth = 20; // Regular width
         cHeight = 20; // Regular height
 
-        health = maxHealth = 2;
+        health = maxHealth = 800;
         damage = 1;
 
         // load sprites
@@ -33,7 +33,7 @@ public class Slugger extends Enemy{
 
             BufferedImage spritesheet = ImageIO.read (
                     getClass().getResourceAsStream(
-                            "/Sprites/Enemies/slugger.gif"
+                            "/Sprites/Enemies/beast.gif"
                     )
             );
 
