@@ -13,7 +13,7 @@ public class MenuState extends GameState{
     private int currentChoice = 0;
 
     private String[] options = {
-            "Race",
+            "Play",
             "Controls",
             "Quit"
     };
@@ -60,7 +60,7 @@ public class MenuState extends GameState{
         // draw title
         g.setColor(titleColor);
         g.setFont(titleFont);
-        g.drawString("Z Racers", 70, 100);
+        g.drawString("Kakarot", 62, 100);
 
         // draw menu options
         g.setFont(font);
@@ -78,7 +78,7 @@ public class MenuState extends GameState{
 
     public void select() {
         if (currentChoice == 0) {
-            gsm.setState(GameStateManager.RACE_STATE);
+            gsm.setState(GameStateManager.PLAY_STATE);
         }
         if (currentChoice == 1) {
             // Controls

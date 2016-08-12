@@ -7,7 +7,7 @@ public class GameStateManager {
 
     public static final int NUMBER_OF_GAME_STATES = 3;
     public static final int MENU_STATE = 0;
-    public static final int RACE_STATE = 1;
+    public static final int PLAY_STATE = 1;
     public static final int CONTROLS_STATE = 2;
 
     public GameStateManager() {
@@ -21,8 +21,8 @@ public class GameStateManager {
     private void loadState(int state) {
         if(state == MENU_STATE)
             gameStates[state] = new MenuState(this);
-        else if(state == RACE_STATE)
-            gameStates[state] = new RaceState(this);
+        else if(state == PLAY_STATE)
+            gameStates[state] = new PlayState(this);
         // else if(state == CONTROLS_STATE)
         // gameStates[state] = new ControlsState(this);
     }

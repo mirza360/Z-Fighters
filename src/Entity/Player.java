@@ -415,7 +415,7 @@ public class Player extends MapObject{
                 dead = true;
             }
         }
-        else if(firingDestructoDisk && previousEnergy > destructoDiskCost) {
+        else if(firingDestructoDisk && previousEnergy >= destructoDiskCost) {
             if(currentAction != ATTACKING_DESTRUCTO_DISK) {
                 sfx.get("destructo").play();
                 currentAction = ATTACKING_DESTRUCTO_DISK;
