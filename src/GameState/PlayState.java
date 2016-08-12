@@ -49,8 +49,8 @@ public class PlayState extends GameState{
 
         hud = new HUD(player);
 
-        //bgMusic = new AudioPlayer("/Music/level1-1.mp3");
-        //bgMusic.play();
+        bgMusic = new AudioPlayer("/Music/skillet_monster.mp3");
+        bgMusic.play();
     }
 
     private void populateEnemies() {
