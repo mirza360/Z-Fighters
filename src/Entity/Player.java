@@ -14,6 +14,7 @@ public class Player extends MapObject{
     // player stuff
     private int health;
     private int maxHealth;
+    private int previousEnergy;
     private int energy;
     private int maxEnergy;
     private boolean dead;
@@ -188,6 +189,11 @@ public class Player extends MapObject{
         floating = b;
     }
 
+    // We can stop charging anytime
+    public void setCharging(boolean b) {
+        charging = b;
+    }
+
     public void checkAttack(ArrayList<Enemy> enemies) {
 
         // loop through enemies
@@ -286,7 +292,7 @@ public class Player extends MapObject{
         }
 
         // cannot move while attacking unless in the air
-        if((currentAction == PUNCHING || currentAction == ATTACKING_DESTRUCTO_DISK)
+        if((currentAction == PUNCHING || currentAction == ATTACKING_DESTRUCTO_DISK || currentAction == CHARGING)
                 && !(jumping || falling)) {
             dx = 0; // cannot move
         }
@@ -300,7 +306,7 @@ public class Player extends MapObject{
 
         // falling
         if(falling) {
-            if(dy > 0 && floating)
+            if(dy > 0 && (floating || charging))
                 dy += fallSpeed * 0.1; // 10% of the speed
             else
                 dy += fallSpeed;
@@ -336,13 +342,23 @@ public class Player extends MapObject{
                 firingDestructoDisk = false;
         }
 
-        // Destructo attack
-        // Need to work on manual charging
+
+        /* Need to work on manual charging
         energy += 1; // Continuously regenerate the energy energy
         if(energy > maxEnergy)
             energy = maxEnergy;
+        */
 
+        // Charging
+        if(charging) {
+            energy += 1;
+            if(energy > maxEnergy)
+                energy = maxEnergy;
+        }
+
+        // Destructo disk
         if(firingDestructoDisk && currentAction != ATTACKING_DESTRUCTO_DISK) {
+            previousEnergy =  energy;
             if(energy > destructoDiskCost) { //if energy is enough to attack
                 energy -= destructoDiskCost;
                 DestructoDisk dd = new DestructoDisk(tileMap, facingRight);
@@ -377,16 +393,28 @@ public class Player extends MapObject{
                 currentAction = PUNCHING;
                 animation.setFrames(sprites.get(PUNCHING));
                 animation.setDelay(150);
-                width = 60;
+                width = 30;
+                height = 30;
             }
         }
-        else if(firingDestructoDisk) {
+        else if(firingDestructoDisk && previousEnergy > destructoDiskCost) {
             if(currentAction != ATTACKING_DESTRUCTO_DISK) {
                 sfx.get("destructo").play();
                 currentAction = ATTACKING_DESTRUCTO_DISK;
                 animation.setFrames(sprites.get(ATTACKING_DESTRUCTO_DISK));
                 animation.setDelay(100);
                 width = 30;
+                height = 30;
+            }
+        }
+        else if(charging) {
+            if(currentAction != CHARGING) {
+                sfx.get("charge").play();
+                currentAction = CHARGING;
+                animation.setFrames(sprites.get(CHARGING));
+                animation.setDelay(100);
+                width = 90;
+                height = 90;
             }
         }
         else if(dy > 0) { // Falling animations
@@ -399,6 +427,7 @@ public class Player extends MapObject{
                  */
                     animation.setDelay(-1);
                     width = 30;
+                    height = 30;
                 }
             }
             else if(currentAction != FALLING) {
@@ -409,6 +438,7 @@ public class Player extends MapObject{
                  */
                 animation.setDelay(-1);
                 width = 30;
+                height = 30;
             }
         }
 
@@ -421,6 +451,7 @@ public class Player extends MapObject{
                  */
                 animation.setDelay(-1);
                 width = 30;
+                height = 30;
             }
         }
 
@@ -430,6 +461,7 @@ public class Player extends MapObject{
                 animation.setFrames(sprites.get(RUNNING));
                 animation.setDelay(40);
                 width = 30;
+                height = 30;
             }
         }
 
@@ -442,6 +474,7 @@ public class Player extends MapObject{
                  */
                 animation.setDelay(-1);
                 width = 30;
+                height = 30;
             }
         }
 

@@ -156,6 +156,9 @@ public class RaceState extends GameState{
         if (k == KeyEvent.VK_E)
             player.setFloating(true);
 
+        if (k == KeyEvent.VK_Q)
+            player.setCharging(true);
+
         if (k == KeyEvent.VK_R)
             player.setPunching();
 
@@ -181,5 +184,8 @@ public class RaceState extends GameState{
 
         if (k == KeyEvent.VK_E)
             player.setFloating(false);
+
+        if (k == KeyEvent.VK_Q)
+            player.setCharging(false);
     }
 }
