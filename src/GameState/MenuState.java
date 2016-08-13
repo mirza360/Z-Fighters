@@ -5,9 +5,13 @@ import TileMap.Background;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
+import Audio.AudioPlayer;
+
 public class MenuState extends GameState{
 
     private Background bg;
+    private AudioPlayer optionSound = new AudioPlayer("/SFX/menuoption.mp3");
+    private AudioPlayer optionSelect = new AudioPlayer("/SFX/menuselect.mp3");
 
     //To keep track of which choice we are selecting
     private int currentChoice = 0;
@@ -90,16 +94,19 @@ public class MenuState extends GameState{
 
     public void keyPressed(int k) {
         if (k == KeyEvent.VK_ENTER) {
+            optionSelect.play();
             select();
         }
         if (k == KeyEvent.VK_UP) {
             currentChoice--;
+            optionSound.play();
             if(currentChoice == -1) {
                 currentChoice = options.length - 1;
             }
         }
         if (k == KeyEvent.VK_DOWN) {
             currentChoice++;
+            optionSound.play();
             if(currentChoice == options.length) {
                 currentChoice = 0;
             }

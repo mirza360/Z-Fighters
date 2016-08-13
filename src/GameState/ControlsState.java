@@ -1,5 +1,6 @@
 package GameState;
 
+import Audio.AudioPlayer;
 import TileMap.Background;
 
 import java.awt.*;
@@ -8,6 +9,7 @@ import java.awt.event.KeyEvent;
 public class ControlsState extends GameState {
 
     private Background bg;
+    private AudioPlayer optionSelect = new AudioPlayer("/SFX/menuselect.mp3");
 
     private String[] controls = {
             "Q: Recharge",
@@ -72,6 +74,7 @@ public class ControlsState extends GameState {
 
     public void keyPressed(int k) {
         if (k == KeyEvent.VK_ENTER) {
+            optionSelect.play();
             gsm.setState(GameStateManager.MENU_STATE);
         }
     }
