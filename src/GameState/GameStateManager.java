@@ -23,8 +23,8 @@ public class GameStateManager {
             gameStates[state] = new MenuState(this);
         else if(state == PLAY_STATE)
             gameStates[state] = new PlayState(this);
-        // else if(state == CONTROLS_STATE)
-        // gameStates[state] = new ControlsState(this);
+        else if(state == CONTROLS_STATE)
+            gameStates[state] = new ControlsState(this);
     }
 
     private void unloadState(int state) {
