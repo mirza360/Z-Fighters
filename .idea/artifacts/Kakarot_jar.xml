@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Kakarot:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Kakarot_jar</output-path>
+    <root id="archive" name="Z-Racers.jar">
+      <element id="module-output" name="Z-Racers" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Libs/jl1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Libs/mp3spi1.9.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Libs/tritonus_share.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
